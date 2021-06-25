@@ -1,0 +1,27 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Gigup | Музыкальная социальная сеть</title>
+    <meta name="description"
+          content="Поиск единомышленников для создания совместных музыкальных проектов">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'client/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'client/favicon.ico' %}" type="image/x-icon">
+
+</head>
+<body>
+<!-- React will load here -->
+<div id="root"></div>
+</body>
+<script src="{% static "client/main.js" %}"></script>
+</html>

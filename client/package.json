@@ -1,0 +1,59 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development ./src/index.js --output-path static/client  --watch",
+    "build": "webpack --mode production ./src/index.js --output-path static/client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "file-loader": "^6.2.0",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.20.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "css-loader": "^5.0.1",
+    "formik": "^2.2.9",
+    "jwt-decode": "^3.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-input-mask": "^2.0.4",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-spinners": "^0.11.0",
+    "react-youtube": "^7.13.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^2.0.0"
+  }
+}

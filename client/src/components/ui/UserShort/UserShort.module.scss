@@ -1,0 +1,51 @@
+.avatarArea {
+  margin-right: 12px;
+}
+
+.infoArea {
+
+}
+
+.name {
+  margin: 0;
+  margin-bottom: 5px;
+
+  font-size: 22px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #444444;
+}
+
+.status {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #444444;
+}
+
+.link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &:active {
+    opacity: .5;
+  }
+}
