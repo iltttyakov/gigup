@@ -27,6 +27,7 @@ export default {
     VideoArea: ({children}) => <div className={cls.videoArea}>{children}</div>,
     SocialList: ({children}) => <ul className={cls.socialList}>{children}</ul>,
     SocialItem: ({socialName, data}) => <li className={cls.socialItem}>
+        {socialName}
         <Social socialName={socialName} data={data}/>
     </li>
 }
