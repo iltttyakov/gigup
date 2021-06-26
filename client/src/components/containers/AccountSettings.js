@@ -28,7 +28,7 @@ const AccountSettings = () => {
     } : {}
 
     return (
-        user
+        user && usersServices.isAuthenticated()
             ? <>
                 <Profile.Header>
                     <Profile.AvatarArea>

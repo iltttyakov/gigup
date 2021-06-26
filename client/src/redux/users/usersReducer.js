@@ -17,7 +17,7 @@ import {
     USER_LOGIN_ERROR_ACTION,
     USER_ME_UPDATE_START_ACTION,
     USER_ME_UPDATE_SUCCESS_ACTION,
-    USER_ME_UPDATE_ERROR_ACTION, USER_LIST_SET_FILTERS_ACTION
+    USER_ME_UPDATE_ERROR_ACTION, USER_LIST_SET_FILTERS_ACTION, USER_ME_START_ACTION
 
 } from '../actionTypes'
 
@@ -69,6 +69,9 @@ export default function usersReducer(state = initialState, action) {
 
 
         /** ME **/
+        case USER_ME_START_ACTION:
+            return {...state, activeUser: null}
+
         case USER_ME_FINISH_ACTION:
             return {...state, activeUser: action.payload}
 

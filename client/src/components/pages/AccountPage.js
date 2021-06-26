@@ -14,15 +14,15 @@ const AccountPage = () => {
     return (
         <Layout>
             <h1>Профиль пользователя</h1>
-            {/*{*/}
-            {/*    user && usersServices.isAuthenticated()*/}
-            {/*        ? <>*/}
-            {/*            <UserProfile user={user}/>*/}
-            {/*            <LinkButton to={'/account-settings'}>Редактировать</LinkButton>*/}
-            {/*            <LogoutButton/>*/}
-            {/*        </>*/}
-            {/*        : <Spinner/>*/}
-            {/*}*/}
+            {
+                usersServices.isAuthenticated() && user
+                    ? <>
+                        {/*<UserProfile user={user}/>*/}
+                        <LinkButton to={'/account-settings'}>Редактировать</LinkButton>
+                        <LogoutButton/>
+                    </>
+                    : <Spinner/>
+            }
         </Layout>
     )
 }
