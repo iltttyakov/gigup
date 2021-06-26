@@ -31,18 +31,18 @@ const UserProfile = ({user}) => {
                 <Profile.Item>
                     <Profile.SocialList>
                         <Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>
-                        {user.telegram
-                            ? <Profile.SocialItem socialName={'telegram'} data={user.telegram}/>
-                            : null
-                        }
-                        {user.vk
-                            ? <Profile.SocialItem socialName={'vk'} data={user.vk}/>
-                            : null
-                        }
-                        {user.instagram
-                            ? <Profile.SocialItem socialName={'instagram'} data={user.instagram}/>
-                            : null
-                        }
+                        {/*{user.telegram*/}
+                        {/*    ? <Profile.SocialItem socialName={'telegram'} data={user.telegram}/>*/}
+                        {/*    : null*/}
+                        {/*}*/}
+                        {/*{user.vk*/}
+                        {/*    ? <Profile.SocialItem socialName={'vk'} data={user.vk}/>*/}
+                        {/*    : null*/}
+                        {/*}*/}
+                        {/*{user.instagram*/}
+                        {/*    ? <Profile.SocialItem socialName={'instagram'} data={user.instagram}/>*/}
+                        {/*    : null*/}
+                        {/*}*/}
                     </Profile.SocialList>
                 </Profile.Item>
             </Profile.List>
