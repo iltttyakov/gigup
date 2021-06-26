@@ -30,7 +30,7 @@ const UserProfile = ({user}) => {
                 <Profile.Item>Уровень игры: {user.skill_level} из 10</Profile.Item>
                 <Profile.Item>
                     <Profile.SocialList>
-                        {/*<Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>*/}
+                        <Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>
                         {user.telegram
                             ? <Profile.SocialItem socialName={'telegram'} data={user.telegram}/>
                             : null
