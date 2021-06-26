@@ -12,12 +12,7 @@ const Social = ({socialName, data}) => {
     } else if (socialName === 'instagram') {
         link = `https://www.instagram.com/${data}/`
     } else if (socialName === 'whatsapp') {
-        const phone = data
-            .replaceAll('-', '')
-            .replaceAll('+', '')
-            .replaceAll('(', '')
-            .replaceAll(')', '')
-            .replaceAll(' ', '')
+        const phone = data.replaceAll('-', '').replaceAll('+', '').replaceAll('(', '').replaceAll(')', '').replaceAll(' ', '')
         link = `https://wa.me/${phone}`
     }
 
