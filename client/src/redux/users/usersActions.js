@@ -109,12 +109,10 @@ export const userMeAction = () => {
         api.users.me()
             .then(response => {
                 dispatch(createAction(USER_ME_FINISH_ACTION, response.data))
-                setNewHeaders(response.data.tokens)
             })
             .catch(error => {
-                dispatch(createAction(USER_ME_ANONYMOUS_ACTION))
-                localStorage.removeItem('access_token')
-                localStorage.removeItem('refresh_token')
+                // console.log('USER_ME_ANONYMOUS_ACTION USER_ME_ANONYMOUS_ACTION USER_ME_ANONYMOUS_ACTION')
+                // dispatch(createAction(USER_ME_ANONYMOUS_ACTION))
             })
     }
 }
@@ -125,13 +123,6 @@ export const userLogoutAction = () => {
     localStorage.removeItem('access_token')
     localStorage.removeItem('refresh_token')
     window.location.href = '/'
-}
-
-
-export function setNewHeaders(data) {
-    axiosAPI.defaults.headers['Authorization'] = 'JWT ' + data.access
-    localStorage.setItem('access_token', data.access)
-    localStorage.setItem('refresh_token', data.refresh)
 }
 
 
@@ -159,4 +150,11 @@ export function userFetchAction(id) {
             })
             .catch(error => console.log('Ошибка загрузки пользователей', error))
     }
+}
+
+
+export function setNewHeaders(data) {
+    axiosAPI.defaults.headers['Authorization'] = 'JWT ' + data.access
+    localStorage.setItem('access_token', data.access)
+    localStorage.setItem('refresh_token', data.refresh)
 }

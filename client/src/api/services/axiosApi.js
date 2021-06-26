@@ -61,7 +61,7 @@ axiosAPI.interceptors.response.use(
                     localStorage.removeItem('access_token')
                     localStorage.removeItem('refresh_token')
                     console.log("Refresh token is expired", tokenParts.exp, now)
-                    window.location.href = '/login/'
+                    window.location.href = '/'
                 }
             } else {
                 localStorage.removeItem('access_token')
@@ -76,11 +76,5 @@ axiosAPI.interceptors.response.use(
         return Promise.reject(error)
     }
 )
-
-export function setNewHeaders(data) {
-    axiosAPI.defaults.headers["Authorization"] = "JWT " + data.access
-    localStorage.setItem("access_token", data.access)
-    localStorage.setItem("refresh_token", data.refresh)
-}
 
 export default axiosAPI
