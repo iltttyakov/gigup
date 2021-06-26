@@ -40,6 +40,33 @@ class UserSerializer(serializers.ModelSerializer):
         )
 
 
+class UserMeSerializer(serializers.ModelSerializer):
+    status_display = serializers.CharField(source='get_status_display', read_only=True)
+    instrument = InstrumentSerializer()
+    genre = GenreSerializer()
+    tokens = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = (
+            'id', 'password', 'avatar', 'phone', 'full_name', 'genre', 'instrument',
+            'status', 'status_display', 'custom_status', 'location', 'age', 'skill_level', 'youtube_ids', 'tokens',
+            'vk', 'instagram', 'telegram'
+        )
+        extra_kwargs = {'password': {'write_only': True}}
+
+    def get_tokens(self, user):
+        tokens = RefreshToken.for_user(user)
+        refresh = str(tokens)
+        access = str(tokens.access_token)
+        data = {
+            'refresh': refresh,
+            'access': access
+        }
+        return data
+
+
+
 class UserUpdateSerializer(serializers.ModelSerializer):
     password = serializers.CharField(required=False)
     avatar = serializers.ImageField(required=False)

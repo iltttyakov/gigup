@@ -109,6 +109,7 @@ export const userMeAction = () => {
         api.users.me()
             .then(response => {
                 dispatch(createAction(USER_ME_FINISH_ACTION, response.data))
+                setNewHeaders(response.data.tokens)
             })
             .catch(error => {
                 dispatch(createAction(USER_ME_ANONYMOUS_ACTION))

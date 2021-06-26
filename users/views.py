@@ -9,7 +9,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import Genre, Instrument, User
 from .permissions import IsAdminOrReadOnly
 from .serializers import MyTokenObtainPairSerializer, GenreSerializer, InstrumentSerializer, UserSerializer, \
-    UserSignUpSerializer, UserUpdateSerializer
+    UserSignUpSerializer, UserUpdateSerializer, UserMeSerializer
 
 
 class TokenObtainPairViewWithInfo(TokenObtainPairView):
@@ -80,7 +80,7 @@ class UserMeView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
-        serializer = UserSerializer(instance=request.user)
+        serializer = UserMeSerializer(instance=request.user)
         return Response(serializer.data)
 
     def post(self, request):
