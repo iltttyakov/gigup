@@ -17,7 +17,7 @@ const AccountPage = () => {
             {
                 usersServices.isAuthenticated() && user
                     ? <>
-                        {/*<UserProfile user={user}/>*/}
+                        <UserProfile user={user}/>
                         <LinkButton to={'/account-settings'}>Редактировать</LinkButton>
                         <LogoutButton/>
                     </>
