@@ -16,9 +16,9 @@ const SearchResultPage = () => {
             for (let i = 0; i < instrumentList.length; i++) {
                 if (instrumentList[i].id == activeFilters.instrument) return instrumentList[i].name
             }
-        } else {
-            return 'Не выбран'
         }
+
+        return 'Не выбран'
     }
 
     useEffect(() => usersServices.userListFetch(activeFilters), [])

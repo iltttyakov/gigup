@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  height: 35px;
+  min-height: 35px;
   width: 100%;
 
   background-color: #FFFD12;
@@ -56,5 +56,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('./hand.svg');
+  }
+}
+
+@media (max-width: 864px) {
+  .rock {
+    &::after {
+      right: 5px;
+
+      margin-top: -10px;
+      width: 19px;
+      height: 19px;
+    }
   }
 }

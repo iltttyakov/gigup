@@ -3,12 +3,15 @@ import cls from './Layout.module.scss'
 
 import Container from "../Container/Container"
 import HomeLink from "../../ui/HomeLink/HomeLink";
-import LogoutButton from "../../ui/LogoutButton/LogoutButton";
+import Logo from "../../ui/Logo/Logo";
 
 const Layout = ({children}) => {
     return (
         <div className={cls.box}>
-            <HomeLink/>
+            <div className={cls.header}>
+                <Logo/>
+                <HomeLink/>
+            </div>
             <Container>
                 {children}
             </Container>

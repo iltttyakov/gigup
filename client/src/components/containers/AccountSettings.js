@@ -21,6 +21,10 @@ const AccountSettings = () => {
         age: user.age,
         skill_level: user.skill_level,
         youtube_ids: user.youtube_ids ? user.youtube_ids.split(',') : [],
+
+        vk: user.vk ? `vk.com/${user.vk}` : '',
+        instagram: user.instagram ? `instagram.com/${user.instagram}/` : '',
+        telegram: user.telegram ? `telegram.me/${user.telegram}` : '',
     } : {}
 
     return (

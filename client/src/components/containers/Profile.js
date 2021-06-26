@@ -22,12 +22,29 @@ const UserProfile = ({user}) => {
                 <Button type={'link'} to={'/search'} rock={true}>Поиск музыкантов</Button>
             </Profile.ControlsArea>
             <Profile.List>
-                <Profile.Item>Телефон: {user.phone}</Profile.Item>
-                <Profile.Item>Город: {user.location}</Profile.Item>
-                <Profile.Item>Возраст: {user.age}</Profile.Item>
-                <Profile.Item>Инструмент: {user.instrument.name}</Profile.Item>
+                <Profile.Item>Телефон: <a href={`tel:${user.phone}`}>{user.phone}</a></Profile.Item>
+                <Profile.Item>Город: {user.location || 'Не выбран'}</Profile.Item>
+                <Profile.Item>Возраст: {user.age || 'Не выбран'}</Profile.Item>
+                <Profile.Item>Инструмент: {user.instrument ? user.instrument.name : 'Не выбран'}</Profile.Item>
                 <Profile.Item>Жанр: {user.genre ? user.genre.name : 'Не выбран'}</Profile.Item>
                 <Profile.Item>Уровень игры: {user.skill_level} из 10</Profile.Item>
+                <Profile.Item>
+                    <Profile.SocialList>
+                        <Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>
+                        {user.telegram
+                            ? <Profile.SocialItem socialName={'telegram'} data={user.telegram}/>
+                            : null
+                        }
+                        {user.vk
+                            ? <Profile.SocialItem socialName={'vk'} data={user.vk}/>
+                            : null
+                        }
+                        {user.instagram
+                            ? <Profile.SocialItem socialName={'instagram'} data={user.instagram}/>
+                            : null
+                        }
+                    </Profile.SocialList>
+                </Profile.Item>
             </Profile.List>
             {
                 user.youtube_ids

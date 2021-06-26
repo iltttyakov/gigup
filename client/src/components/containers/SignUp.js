@@ -16,6 +16,10 @@ const initialValues = {
     skill_level: '0',
     password: '',
     youtube_ids: [],
+
+    vk: '',
+    instagram: '',
+    telegram: '',
 }
 
 const validate = values => {

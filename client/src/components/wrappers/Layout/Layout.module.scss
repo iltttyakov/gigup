@@ -1,4 +1,14 @@
 .box {
-  padding-top: 10px;
   padding-bottom: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 15px;
+  margin-bottom: 15px;
+
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.10);
 }

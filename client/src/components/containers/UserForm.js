@@ -85,12 +85,31 @@ const UserForm = (
 
         const single_fields = [
             'full_name', 'phone', 'status', 'custom_status', 'location',
-            'instrument', 'genre', 'age', 'skill_level', 'password'
+            'instrument', 'genre', 'age', 'skill_level', 'password',
         ]
+
+        const link_fields = ['vk', 'instagram', 'telegram',]
 
         single_fields.forEach(fieldName => {
             if (values[fieldName] && values[fieldName] !== '0') {
                 formData.append(fieldName, values[fieldName])
+            } else {
+                formData.append(fieldName, '')
+            }
+        })
+
+        /** Поля, где воможно вставить ссылку **/
+        link_fields.forEach(fieldName => {
+            if (values[fieldName]) {
+                const array = values[fieldName].split('/')
+                let value = ''
+                for (let i = array.length - 1; i >= 0; i--) {
+                    if (array[i]) {
+                        value = array[i]
+                        break
+                    }
+                }
+                formData.append(fieldName, value)
             } else {
                 formData.append(fieldName, '')
             }
@@ -244,6 +263,43 @@ const UserForm = (
                             touched={touched['password']}
                         />
                     </Form.Item>
+
+
+                    <Form.Item>
+                        <Input
+                            placeholder={'VK'}
+                            type={'text'}
+                            name={'vk'}
+                            onChange={handleChange}
+                            value={values['vk']}
+                            error={[errors['vk'], apiErrors['vk']]}
+                            touched={touched['vk']}
+                        />
+                    </Form.Item>
+                    <Form.Item>
+                        <Input
+                            placeholder={'Instagram'}
+                            type={'text'}
+                            name={'instagram'}
+                            onChange={handleChange}
+                            value={values['instagram']}
+                            error={[errors['instagram'], apiErrors['instagram']]}
+                            touched={touched['instagram']}
+                        />
+                    </Form.Item>
+                    <Form.Item>
+                        <Input
+                            placeholder={'Telegram'}
+                            type={'text'}
+                            name={'telegram'}
+                            onChange={handleChange}
+                            value={values['telegram']}
+                            error={[errors['telegram'], apiErrors['telegram']]}
+                            touched={touched['telegram']}
+                        />
+                    </Form.Item>
+
+
                     <Form.Item>
                         <Button onClick={addVideo}>Добавить видео</Button>
                     </Form.Item>

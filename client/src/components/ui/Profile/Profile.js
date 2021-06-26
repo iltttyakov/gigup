@@ -1,5 +1,6 @@
 import React from 'react'
 import cls from './Profile.module.scss'
+import Social from "../Social/Social";
 
 export default {
     Header: ({children}) => <div className={cls.header}>{children}</div>,
@@ -24,4 +25,8 @@ export default {
     List: ({children}) => <ul className={cls.infoList}>{children}</ul>,
     Item: ({children}) => <li className={cls.infoItem}>{children}</li>,
     VideoArea: ({children}) => <div className={cls.videoArea}>{children}</div>,
+    SocialList: ({children}) => <ul className={cls.socialList}>{children}</ul>,
+    SocialItem: ({socialName, data}) => <li className={cls.socialItem}>
+        <Social socialName={socialName} data={data}/>
+    </li>
 }

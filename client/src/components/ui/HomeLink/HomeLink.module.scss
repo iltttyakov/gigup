@@ -1,7 +1,7 @@
 .box {
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
   width: 24px;
   height: 24px;

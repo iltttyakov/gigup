@@ -1,0 +1,17 @@
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22px;
+  color: #414141;
+}

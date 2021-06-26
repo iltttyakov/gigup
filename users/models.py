@@ -47,7 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     phone = models.CharField('Номер телефона', max_length=18, unique=True)
     avatar = models.ImageField('Фото профиля', upload_to='users', blank=True, null=True)
-    full_name = models.CharField('ФИО пользователя', max_length=150)
+    full_name = models.CharField('Имя', max_length=150)
     genre = models.ForeignKey(Genre, verbose_name='Жанр', null=True, on_delete=models.SET_NULL)
     instrument = models.ForeignKey(Instrument, verbose_name='Инструмент', null=True, on_delete=models.SET_NULL)
     status = models.CharField('Статус', max_length=50, choices=STATUS_CHOICES, default=LOOKING_FOR)
@@ -58,6 +58,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     youtube_ids = models.TextField('ID видео с youtube через ","', null=True, blank=True)
 
     is_staff = models.BooleanField('Администратор?', default=False)
+
+    telegram = models.CharField('Telegram', max_length=100, blank=True, null=True)
+    vk = models.CharField('ВКонтакте', max_length=100, null=True, blank=True)
+    instagram = models.CharField('Instagram', max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f'<{self.id}> | {self.full_name}'

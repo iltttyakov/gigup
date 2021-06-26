@@ -49,8 +49,41 @@
   font-size: 18px;
   line-height: 22px;
   color: #414141;
+
+  a {
+    color: #414141;
+  }
 }
 
 .videoArea {
   margin-top: 20px;
+}
+
+.socialList {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialItem {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 864px) {
+  .name {
+    margin-bottom: 5px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .status {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }

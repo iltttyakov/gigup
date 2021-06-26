@@ -86,6 +86,7 @@ class UserMeView(APIView):
     def post(self, request):
         serializer = UserUpdateSerializer(data=request.data, instance=request.user)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=HTTP_201_CREATED)
+            instance = serializer.save()
+            instance_serializer = UserSerializer(instance)
+            return Response(instance_serializer.data, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)

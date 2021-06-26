@@ -33,8 +33,11 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'avatar', 'phone', 'full_name', 'genre', 'instrument',
-                  'status', 'status_display', 'custom_status', 'location', 'age', 'skill_level', 'youtube_ids')
+        fields = (
+            'id', 'avatar', 'phone', 'full_name', 'genre', 'instrument',
+            'status', 'status_display', 'custom_status', 'location', 'age', 'skill_level', 'youtube_ids',
+            'vk', 'instagram', 'telegram'
+        )
 
 
 class UserUpdateSerializer(serializers.ModelSerializer):
@@ -45,7 +48,8 @@ class UserUpdateSerializer(serializers.ModelSerializer):
         model = User
         fields = (
             'avatar', 'phone', 'full_name', 'genre', 'instrument', 'status',
-            'custom_status', 'location', 'age', 'skill_level', 'password', 'youtube_ids'
+            'custom_status', 'location', 'age', 'skill_level', 'password', 'youtube_ids',
+            'vk', 'instagram', 'telegram'
         )
 
     def update(self, instance, validated_data):
@@ -67,8 +71,11 @@ class UserSignUpSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'password', 'avatar', 'phone', 'full_name', 'genre', 'instrument',
-                  'status', 'custom_status', 'location', 'age', 'skill_level', 'youtube_ids', 'tokens')
+        fields = (
+            'id', 'password', 'avatar', 'phone', 'full_name', 'genre', 'instrument',
+            'status', 'custom_status', 'location', 'age', 'skill_level', 'youtube_ids', 'tokens',
+            'vk', 'instagram', 'telegram'
+        )
         extra_kwargs = {'password': {'write_only': True}}
 
     def get_tokens(self, user):
@@ -84,7 +91,7 @@ class UserSignUpSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User(phone=validated_data['phone'])
 
-        FIELDS = [
+        fields = [
             'avatar',
             'phone',
             'full_name',
@@ -96,9 +103,12 @@ class UserSignUpSerializer(serializers.ModelSerializer):
             'age',
             'skill_level',
             'youtube_ids',
+            'vk',
+            'instagram',
+            'telegram'
         ]
 
-        for field_name in FIELDS:
+        for field_name in fields:
             if field_name in validated_data:
                 user.__setattr__(field_name, validated_data[field_name])
 
