@@ -13,7 +13,6 @@ const AccountPage = () => {
 
     return (
         <Layout>
-            <h1>Профиль пользователя</h1>
             {
                 usersServices.isAuthenticated() && user
                     ? <>

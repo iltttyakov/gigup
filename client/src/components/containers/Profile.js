@@ -28,23 +28,23 @@ const UserProfile = ({user}) => {
                 <Profile.Item>Инструмент: {user.instrument ? user.instrument.name : 'Не выбран'}</Profile.Item>
                 <Profile.Item>Жанр: {user.genre ? user.genre.name : 'Не выбран'}</Profile.Item>
                 <Profile.Item>Уровень игры: {user.skill_level} из 10</Profile.Item>
-                {/*<Profile.Item>*/}
-            {/*        <Profile.SocialList>*/}
-            {/*            <Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>*/}
-            {/*            {user.telegram*/}
-            {/*                ? <Profile.SocialItem socialName={'telegram'} data={user.telegram}/>*/}
-            {/*                : null*/}
-            {/*            }*/}
-            {/*            {user.vk*/}
-            {/*                ? <Profile.SocialItem socialName={'vk'} data={user.vk}/>*/}
-            {/*                : null*/}
-            {/*            }*/}
-            {/*            {user.instagram*/}
-            {/*                ? <Profile.SocialItem socialName={'instagram'} data={user.instagram}/>*/}
-            {/*                : null*/}
-            {/*            }*/}
-            {/*        </Profile.SocialList>*/}
-            {/*    </Profile.Item>*/}
+                <Profile.Item>
+                    <Profile.SocialList>
+                        <Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>
+                        {user.telegram
+                            ? <Profile.SocialItem socialName={'telegram'} data={user.telegram}/>
+                            : null
+                        }
+                        {user.vk
+                            ? <Profile.SocialItem socialName={'vk'} data={user.vk}/>
+                            : null
+                        }
+                        {user.instagram
+                            ? <Profile.SocialItem socialName={'instagram'} data={user.instagram}/>
+                            : null
+                        }
+                    </Profile.SocialList>
+                </Profile.Item>
             </Profile.List>
             {
                 user.youtube_ids
