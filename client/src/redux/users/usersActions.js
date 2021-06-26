@@ -100,9 +100,6 @@ export const userLoginAction = (phone, password) => {
 }
 
 
-export const userIsAuthenticated = () => api.users.isAuthenticated()
-
-
 export const userMeAction = () => {
     return async dispatch => {
         dispatch(createAction(USER_ME_START_ACTION))
@@ -119,10 +116,12 @@ export const userMeAction = () => {
 
 
 export const userLogoutAction = () => {
-    dispatch(createAction(USER_ME_ANONYMOUS_ACTION))
-    localStorage.removeItem('access_token')
-    localStorage.removeItem('refresh_token')
-    window.location.href = '/'
+    return async dispatch => {
+        dispatch(createAction(USER_ME_ANONYMOUS_ACTION))
+        localStorage.removeItem('access_token')
+        localStorage.removeItem('refresh_token')
+        window.location.href = '/'
+    }
 }
 
 

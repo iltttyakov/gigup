@@ -10,6 +10,7 @@ import {
     userMeUpdateAction,
     userSignUpAction
 } from "./usersActions"
+import api from "../../api/api";
 
 export default {
     instrumentListFetch: () => dispatch(instrumentListFetchAction()),
@@ -22,5 +23,5 @@ export default {
     userListFetch: (filters = {}) => dispatch(userListFetchAction(filters)),
     userListSetFilters: (filters = {}) => dispatch(userListSetFiltersAction(filters)),
     userFetch: id => dispatch(userFetchAction(id)),
-    isAuthenticated: () => userIsAuthenticated(),
+    isAuthenticated: () => api.users.isAuthenticated(),
 }

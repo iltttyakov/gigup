@@ -18,8 +18,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 
 function App() {
-    useEffect(usersServices.userMe)
-
     return (
         <Router basename={''}>
             <Switch>

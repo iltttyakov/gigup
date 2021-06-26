@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Layout from "../wrappers/Layout/Layout"
 import {useSelector} from "react-redux";
 import LinkButton from "../ui/LinkButton/LinkButton";
@@ -9,12 +9,12 @@ import usersServices from "../../redux/users/usersServices";
 
 const AccountPage = () => {
     const user = useSelector(state => state.users.activeUser)
-    const isAuthenticated = usersServices.isAuthenticated()
+    useEffect(usersServices.userMe, [])
 
     return (
         <Layout>
             {
-                user && isAuthenticated
+                user && usersServices.isAuthenticated()
                     ? <>
                         <UserProfile user={user}/>
                         <LinkButton to={'/account-settings'}>Редактировать</LinkButton>
