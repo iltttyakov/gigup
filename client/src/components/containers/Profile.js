@@ -21,14 +21,14 @@ const UserProfile = ({user}) => {
             <Profile.ControlsArea>
                 <Button type={'link'} to={'/search'} rock={true}>Поиск музыкантов</Button>
             </Profile.ControlsArea>
-            {/*<Profile.List>*/}
-            {/*    <Profile.Item>Телефон: <a href={`tel:${user.phone}`}>{user.phone}</a></Profile.Item>*/}
-            {/*    <Profile.Item>Город: {user.location || 'Не выбран'}</Profile.Item>*/}
-            {/*    <Profile.Item>Возраст: {user.age || 'Не выбран'}</Profile.Item>*/}
-            {/*    <Profile.Item>Инструмент: {user.instrument ? user.instrument.name : 'Не выбран'}</Profile.Item>*/}
-            {/*    <Profile.Item>Жанр: {user.genre ? user.genre.name : 'Не выбран'}</Profile.Item>*/}
-            {/*    <Profile.Item>Уровень игры: {user.skill_level} из 10</Profile.Item>*/}
-            {/*    <Profile.Item>*/}
+            <Profile.List>
+                <Profile.Item>Телефон: <a href={`tel:${user.phone}`}>{user.phone}</a></Profile.Item>
+                <Profile.Item>Город: {user.location || 'Не выбран'}</Profile.Item>
+                <Profile.Item>Возраст: {user.age || 'Не выбран'}</Profile.Item>
+                <Profile.Item>Инструмент: {user.instrument ? user.instrument.name : 'Не выбран'}</Profile.Item>
+                <Profile.Item>Жанр: {user.genre ? user.genre.name : 'Не выбран'}</Profile.Item>
+                <Profile.Item>Уровень игры: {user.skill_level} из 10</Profile.Item>
+                {/*<Profile.Item>*/}
             {/*        <Profile.SocialList>*/}
             {/*            <Profile.SocialItem socialName={'whatsapp'} data={user.phone}/>*/}
             {/*            {user.telegram*/}
@@ -45,7 +45,7 @@ const UserProfile = ({user}) => {
             {/*            }*/}
             {/*        </Profile.SocialList>*/}
             {/*    </Profile.Item>*/}
-            {/*</Profile.List>*/}
+            </Profile.List>
             {
                 user.youtube_ids
                     ? <Profile.VideoArea>
