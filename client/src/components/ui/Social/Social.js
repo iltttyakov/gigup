@@ -17,7 +17,7 @@ const Social = ({socialName, data}) => {
             .replace('-', '')
             .replace('+', '')
             .replace('(', '')
-            .replace(')', '')
+            .replace(')', '')   
             .replace(' ', '')
             .replace(' ', '')
         link = `https://wa.me/${phone}`

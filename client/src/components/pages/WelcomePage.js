@@ -9,7 +9,7 @@ const WelcomePage = () => {
     return (
         <Layout>
             <PageHeader>
-                <Title>Музыкальная социальная сеть Gigup</Title>
+                <Title>Музыкальная социальная сеть GetBand</Title>
                 <SubTitle>Найди нужных музыкантов для совместных проектов в своём городе</SubTitle>
             </PageHeader>
             <Button type={'link'} to={'/login'} rock={true}>Войти</Button>

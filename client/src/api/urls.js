@@ -1,5 +1,5 @@
 // export const BASE_API_URL = 'http://127.0.0.1:8000/api/v1/'
-export const BASE_API_URL = 'https://gigup.iltyakovvv.ru/api/v1/'
+export const BASE_API_URL = 'https://getband.ru/api/v1/'
 
 export const TOKEN_REFRESH_API_URL = '/token/refresh/'
 export const TOKEN_OBTAIN_API_URL = '/token/obtain/'

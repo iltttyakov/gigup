@@ -7,7 +7,7 @@ const Logo = () => {
     return (
         <div className={cls.box}>
             <img className={cls.img} src={logo}/>
-            <span className={cls.label}>Gigup</span>
+            <span className={cls.label}>GetBand</span>
         </div>
     )
 }

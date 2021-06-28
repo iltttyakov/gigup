@@ -10,7 +10,7 @@ const LoginPage = () => {
     return (
         <Layout>
             <PageHeader>
-                <Title>Музыкальная социальная сеть Gigup</Title>
+                <Title>Музыкальная социальная сеть GetBand</Title>
                 <SubTitle>Найди нужных музыкантов для совместных проектов в своём городе</SubTitle>
             </PageHeader>
             <Title marginBottom={25}>Войти в свой аккаунт</Title>
